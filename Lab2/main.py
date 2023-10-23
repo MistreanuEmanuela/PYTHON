@@ -26,7 +26,7 @@ print("------------------------2------------------------------")
 #  2. Write a function that receives a list of numbers and returns a list of the prime numbers found in it.
 
 def prime(x):
-    for i in (2, x-1):
+    for i in range(2, x-1):
         if x % i == 0:
             return False
     return True
