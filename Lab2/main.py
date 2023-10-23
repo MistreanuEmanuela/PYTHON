@@ -239,7 +239,6 @@ def group_by_rhyme(words):
     rhymes.append(r)
     return(rhymes)
 
-# Example usage:
 word_list = ['ana', 'banana', 'carte', 'arme', 'parte']
 result = group_by_rhyme(word_list)
 print(result)
