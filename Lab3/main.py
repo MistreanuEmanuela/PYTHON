@@ -32,7 +32,6 @@ def dictionary(string):
         else:
             dict_nr_app[ch] = 1
 
-    # sorted_dict_nr_app = sorted(dict_nr_app.items(), key=lambda element: element[1], reverse = True)
     return dict_nr_app
 
 
