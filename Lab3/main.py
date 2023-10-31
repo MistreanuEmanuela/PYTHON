@@ -32,6 +32,7 @@ def dictionary(string):
         else:
             dict_nr_app[ch] = 1
 
+    # sorted_dict_nr_app = sorted(dict_nr_app.items(), key=lambda element: element[1], reverse = True)
     return dict_nr_app
 
 
@@ -96,7 +97,8 @@ def build_xml_element(tag, content, **arguments):
     for key, value in arguments.items():
         tagg += f'{key} = "{value}\ "'
     tagg += f'>'
-    return f'"{tagg} {content} "'
+    end = f'</{tag}>'
+    return f'"{tagg} {content} {end}"'
 
 
 print(build_xml_element("a", "Hello there", href="http://python.org ", _class=" my-link ", id=" someid "))
@@ -134,13 +136,15 @@ def validate_dict(rules_set, dictionary_test):
                 return False
             if suffix and not value.endswith(suffix):
                 return False
-
+            if prefix == suffix == value:
+                return False
     return True
 
 
 print(validate_dict({("key1", "", "inside", ""), ("key2", "start", "middle", "winter")},
                     {"key1": "come inside, it's too cold out", "key3": "this is not valid"}))
-
+print(validate_dict({("key1", "start", "", "start")},
+                    {"key1": "start"}))
 print("--------------------------------------------6----------------------------------------------------------")
 
 
