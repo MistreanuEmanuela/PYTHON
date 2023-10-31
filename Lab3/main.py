@@ -66,10 +66,8 @@ def compare_dictionary(dict1, dict2):
             if len(value1) != len(value2):
                 return False
             else:
-                sorted1 = sorted(value1)
-                sorted2 = sorted(value2)
                 for i in range(len(value1)):
-                    if sorted1[i] != sorted2[i]:
+                    if value1[i] != value2[i]:
                         return False
         else:
             if value1 != value2:
