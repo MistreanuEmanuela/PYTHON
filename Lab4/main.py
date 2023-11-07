@@ -92,7 +92,7 @@ class Queue:
             warnings.warn("The queue is empty.", stacklevel=2)
             return None
         else:
-            value = copy.deepcopy(self.queue_list[-1])
+            value = copy.deepcopy(self.queue_list[0])
             return value
 
     def is_empty(self):
