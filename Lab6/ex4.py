@@ -16,13 +16,13 @@ try:
             else:
                 dictionary_extension[file_name[1]] = 1
         if not files:
-            raise Exception
+            raise Exception("The directory is empty")
 except FileNotFoundError:
     print("Your path is wrong")
 except PermissionError:
     print(f"Error: Permission denied. Check if you have the necessary permissions to access the files.")
-except Exception:
-    print("The directory is empty")
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 for key in dictionary_extension.keys():
     print(f"Number of files with extension {key} are: {dictionary_extension[key]}")
